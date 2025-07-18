@@ -1,111 +1,117 @@
 import React from 'react';
+import { FaStore, FaMapMarkerAlt, FaClock, FaTags } from 'react-icons/fa';
 
 export default function Home() {
+  const features = [
+    {
+      title: 'Fresh Daily Stock',
+      description: 'Vegetables, fruits, and milk delivered fresh every morning.',
+      icon: 'https://img.icons8.com/color/96/shopping-basket-2.png',
+    },
+    {
+      title: 'Affordable Prices',
+      description: 'Reasonable pricing on all household and grocery items.',
+      icon: 'https://img.icons8.com/color/96/cheap.png',
+    },
+    {
+      title: 'Friendly Service',
+      description: 'Our staff greets every customer with a smile.',
+      icon: 'https://img.icons8.com/color/96/customer-support.png',
+    },
+  ];
+
+  const stats = [
+    { number: '25+', label: 'Years in Business' },
+    { number: '1000+', label: 'Products Available' },
+    { number: '10,000+', label: 'Happy Customers' },
+  ];
+
   return (
-    <>
-    <div style={styles.background}>
-      <div style={styles.page}>
-        <h1 style={styles.title}>Welcome to Lakshman Stall</h1>
-        <p className="text-lg mb-10 max-w-2xl">
-        We offer a wide range of daily essentials, from groceries to household items, all under one roof. With a legacy of trust and service in Kadri, Mangalore, we’re here to make your shopping experience easy and affordable.
-      </p>
+    <div className="min-h-screen bg-cover bg-fixed bg-center" style={{ backgroundImage: 'url("/background-store.png")' }}>
       
+      {/* Hero Section */}
+      <section className="h-[70vh] flex items-center justify-center relative text-center">
+        <div className="bg-white/80 p-8 rounded-xl max-w-3xl mx-auto shadow-lg">
+          <h1 className="text-5xl font-bold text-green-800 mb-4">Welcome to Lakshman Stall</h1>
+          <p className="text-xl text-gray-700">
+            Serving Kadri Hills since 1995 — Trusted for freshness, price & quality.
+          </p>
+        </div>
+      </section>
+
+      {/* Feature Cards with Icons */}
+      <section className="py-12 px-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card icon={<FaMapMarkerAlt className="text-green-600 text-3xl" />} title="Location" desc="Kadri Hills, Mangaluru, Karnataka 575008" />
+          <Card icon={<FaClock className="text-green-600 text-3xl" />} title="Open Hours" desc="Mon–Sun, 7:30 AM to 9:30 PM" />
+          <Card icon={<FaStore className="text-green-600 text-3xl" />} title="Since 1995" desc="30 years of trusted service in the neighborhood" />
+          <Card icon={<FaTags className="text-green-600 text-3xl" />} title="What We Sell" desc="Snacks, Cool Drinks, Ice Creams, Stationery, Soaps & More" />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 px-6 text-center">
+        <p className="text-lg max-w-3xl mx-auto mb-8 text-gray-800">
+          We offer a wide range of daily essentials, from snacks and cool drinks to stationery and sweets — all under one friendly roof.
+        </p>
         <img
           src="WhatsApp Image 2025-07-17 at 14.31.13_570daf18.jpg"
-          alt="Our Store"
-          style={styles.image}
+          alt="Lakshman Stall Front"
+          className="rounded-xl shadow-lg mx-auto w-full max-w-xl"
         />
-      </div>
-      </div>
+      </section>
 
-      {/* Store Features Section */}
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -mx-4 -my-8 justify-center">
-
-            {/* Card 1 */}
-            <div className="py-8 px-4 lg:w-1/3">
-              <div className="h-full flex items-start">
-                <div className="w-12 flex-shrink-0">
-                  <img
-                    src="https://img.icons8.com/color/96/shopping-bag--v1.png"
-                    alt="Quality"
-                    className="w-12 h-12 object-contain"
-                  />
+      {/* Feature Section */}
+      <section className="text-gray-700 py-20 bg-white/70">
+        <div className="container px-5 mx-auto">
+          <div className="flex flex-wrap -m-4 justify-center">
+            {features.map((item, index) => (
+              <div key={index} className="p-4 md:w-1/3 flex flex-col text-center items-center">
+                <div className="w-16 h-16 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-5">
+                  <img src={item.icon} alt={item.title} className="w-10 h-10" />
                 </div>
-                <div className="flex-grow pl-6">
-                  <h2 className="tracking-widest text-xs title-font font-medium text-green-500 mb-1">QUALITY</h2>
-                  <h1 className="title-font text-xl font-medium text-gray-900 mb-3">Best Products</h1>
-                  <p className="leading-relaxed mb-5">We offer top-notch items for daily needs with guaranteed quality and freshness.</p>
-                </div>
+                <h2 className="text-lg font-medium text-gray-900">{item.title}</h2>
+                <p className="leading-relaxed text-base text-center">{item.description}</p>
               </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="py-8 px-4 lg:w-1/3">
-              <div className="h-full flex items-start">
-                <div className="w-12 flex-shrink-0">
-                  <img
-                    src="https://img.icons8.com/color/96/customer-support.png"
-                    alt="Friendly"
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
-                <div className="flex-grow pl-6">
-                  <h2 className="tracking-widest text-xs title-font font-medium text-green-500 mb-1">SERVICE</h2>
-                  <h1 className="title-font text-xl font-medium text-gray-900 mb-3">Friendly Behaviour</h1>
-                  <p className="leading-relaxed mb-5">Our staff greets every customer with respect, care, and a smile.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="py-8 px-4 lg:w-1/3">
-              <div className="h-full flex items-start">
-                <div className="w-12 flex-shrink-0">
-                  <img
-                    src="https://img.icons8.com/color/96/cheap.png"
-                    alt="Affordable"
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
-                <div className="flex-grow pl-6">
-                  <h2 className="tracking-widest text-xs title-font font-medium text-green-500 mb-1">PRICING</h2>
-                  <h1 className="title-font text-xl font-medium text-gray-900 mb-3">Affordable Prices</h1>
-                  <p className="leading-relaxed mb-5">We provide everyday essentials at competitive prices that suit your budget.</p>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
-    </>
+
+      {/* Stats Section */}
+      <section className="bg-green-100/70 py-10">
+        <div className="flex justify-around max-w-4xl mx-auto text-center">
+          {stats.map((stat, idx) => (
+            <div key={idx}>
+              <h3 className="text-4xl font-bold text-green-700">{stat.number}</h3>
+              <p className="text-lg text-gray-800">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <div className="text-center py-12">
+        <h2 className="text-2xl font-bold text-green-800 mb-4">Come Visit Lakshman Stall Today!</h2>
+        <a
+          href="https://www.google.com/maps/place/Kadri+Hills,+Mangaluru,+Karnataka+575008"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-green-600 text-white py-2 px-6 rounded-full hover:bg-green-700 transition-all duration-200"
+        >
+          📍 Get Directions
+        </a>
+      </div>
+    </div>
   );
 }
 
-const styles = {
-  page: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '2rem',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '2.5rem',
-    marginBottom: '0.5rem',
-    color: '#4CAF50',
-  },
-  subtitle: {
-    fontSize: '1.2rem',
-    marginBottom: '1.5rem',
-  },
-  image: {
-    width: '80%',
-    maxWidth: '600px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-  },
-};
+function Card({ icon, title, desc }) {
+  return (
+    <div className="bg-white/80 shadow-md rounded-xl p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
+      {icon}
+      <h3 className="text-xl font-semibold mt-4 mb-2 text-green-900">{title}</h3>
+      <p className="text-gray-700 text-sm">{desc}</p>
+    </div>
+  );
+}

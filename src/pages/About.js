@@ -1,64 +1,81 @@
 import React from 'react';
+import { FaHandsHelping, FaSmile, FaTree, FaBook } from 'react-icons/fa';
 
 export default function About() {
   return (
-    <div style={styles.page}>
-      <h1 style={styles.title}>About Us</h1>
-      <p style={styles.subtitle}>
-       Welcome to Lakshman Stall, your friendly neighborhood store that has been serving the community since 1995! Located in the peaceful surroundings of Kadri Hills, Kadri, Mangaluru, we’ve been a trusted destination for everyday essentials for nearly three decades. I’m Lakshman, the proud owner of this store, and I personally make sure every customer feels valued.
+    <div className="bg-gradient-to-br from-green-50 to-yellow-100 min-h-screen p-6 text-gray-800">
+      {/* Hero Section */}
+      <section className="text-center py-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-green-900 mb-4 animate-fade-in-down">
+          Meet Laxman
+        </h1>
+        <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-700">
+          A familiar face in Kadri Hills, known for his kindness, honesty, and dedication to the local community.
+        </p>
+      </section>
 
-At Lakshman Stall, we believe in providing not just products, but a great shopping experience. From groceries to daily-use items, everything you need is available right here — fresh, affordable, and always reliable. Our prices are fair, and our service is friendly because we treat our customers like family.
+      {/* Image Section */}
+      <section className="flex justify-center gap-6 mb-10">
+  <img
+    src="img/IMG-20250717-WA0003[1].jpg"
+    alt="Laxman"
+    className="rounded-lg shadow-lg w-72 sm:w-80 object-cover"
+  />
+  <img
+    src="img/IMG-20250717-WA0003[2].jpg"
+    alt="Laxman"
+    className="rounded-lg shadow-lg w-72 sm:w-80 object-cover"
+  />
+</section>
 
-We started small back in 1995, and thanks to your continued support, we've grown into a well-known local hub. Whether you’re a regular or a first-time visitor, you’ll find a welcoming environment and staff ready to help you.
 
-So, if you're in or around Kadri Hills, Mangaluru, we invite you to visit us at Lakshman Stall. Discover convenience, quality, and genuine care — all under one roof. We’re more than just a store; we’re part of your community. Come experience the difference at Lakshman Stall — where tradition meets trust since 1995!
-      </p>
-
-      <div style={styles.imageContainer}>
-        <img
-          src="img/IMG-20250717-WA0003[1].jpg"
-          alt="Store Owner"
-          style={styles.image}
+      {/* Life and Values */}
+      <section className="grid md:grid-cols-3 gap-8 py-12 max-w-6xl mx-auto">
+        <FeatureCard
+          icon={<FaHandsHelping className="text-green-600 text-3xl" />}
+          title="Always Helping"
+          desc="Laxman is known for going the extra mile to help his customers and neighbors without expecting anything in return."
         />
-        <img
-          src="img/IMG-20250717-WA0003[2].jpg"
-          alt="Store Front"
-          style={styles.image}
+        <FeatureCard
+          icon={<FaSmile className="text-yellow-500 text-3xl" />}
+          title="Friendly Nature"
+          desc="He greets every visitor with a warm smile, making everyone feel like family."
         />
-      </div>
+        <FeatureCard
+          icon={<FaTree className="text-green-700 text-3xl" />}
+          title="Simple Living"
+          desc="Laxman lives a humble life and believes in honesty, sustainability, and local values."
+        />
+      </section>
+
+      {/* History Section */}
+      <section className="bg-white bg-opacity-90 rounded-2xl p-10 my-10 max-w-5xl mx-auto shadow-md">
+        <div className="flex items-center justify-center mb-6">
+          <FaBook className="text-green-700 text-3xl mr-2" />
+          <h2 className="text-2xl font-bold text-green-900">His Journey</h2>
+        </div>
+        <p className="text-gray-700 text-lg leading-relaxed text-justify">
+          In the early 1990s, Laxman began a humble journey as a small-time seller with a simple idea — to serve the local community with everyday essentials. With time, dedication, and trust, he became a household name across Kadri Hills. Known for his warmth, honesty, and attention to quality, Laxman not only earned the trust of customers but also their love. His service has touched generations of families, turning daily shopping into a personal and friendly experience. Even today, he remains deeply committed to offering good value and building genuine connections with everyone he meets.
+        </p>
+      </section>
+
+      {/* Personal Quote */}
+      <section className="bg-white bg-opacity-80 py-12 rounded-2xl shadow-xl mx-4 md:mx-16 my-10 text-center">
+        <p className="text-2xl md:text-3xl font-semibold italic text-green-800 max-w-3xl mx-auto">
+          “Work hard. Be kind. And never forget your roots.” — Laxman
+        </p>
+      </section>
     </div>
   );
 }
 
-const styles = {
-  page: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '2rem',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '2.5rem',
-    marginBottom: '0.5rem',
-    color: '#4CAF50',
-  },
-  subtitle: {
-    fontSize: '1.2rem',
-    maxWidth: '600px',
-    marginBottom: '2rem',
-  },
-  imageContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: '1.5rem',
-    maxWidth: '800px',
-  },
-  image: {
-    width: '300px',
-    maxWidth: '90%',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-  },
-};
+// Feature Card Component
+function FeatureCard({ icon, title, desc }) {
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition duration-300 ease-in-out">
+      <div className="flex justify-center mb-4">{icon}</div>
+      <h3 className="text-xl font-bold mb-2 text-green-800">{title}</h3>
+      <p className="text-gray-600">{desc}</p>
+    </div>
+  );
+}

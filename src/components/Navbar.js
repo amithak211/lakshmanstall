@@ -31,6 +31,7 @@ export default function Navbar() {
   );
 }
 
+// eslint-disable-next-line no-unused-vars
 
 const styles = {
   nav: {
