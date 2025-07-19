@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaStore, FaMapMarkerAlt, FaClock, FaTags } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   const features = [
@@ -28,19 +30,40 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-cover bg-fixed bg-center" style={{ backgroundImage: 'url("/background-store.png")' }}>
-      
+
       {/* Hero Section */}
-      <section className="h-[70vh] flex items-center justify-center relative text-center">
-        <div className="bg-white/80 p-8 rounded-xl max-w-3xl mx-auto shadow-lg">
-          <h1 className="text-5xl font-bold text-green-800 mb-4">Welcome to Lakshman Stall</h1>
-          <p className="text-xl text-gray-700">
-            Serving Kadri Hills since 1995 — Trusted for freshness, price & quality.
+      <section
+        className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1607082352314-722e4c45b2b1?auto=format&fit=crop&w=1740&q=80')",
+        }}
+        data-aos="fade-up"
+      >
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+        <motion.div
+          className="relative z-10 bg-white/80 p-10 rounded-2xl shadow-2xl max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-green-900 mb-4 drop-shadow-lg">
+            <Typewriter
+              options={{
+                strings: ['Welcome to Lakshman Stall', 'Freshness. Quality. Trust.'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-800 font-medium">
+            Since 1995 in Kadri Hills — your daily spot for snacks, cool drinks, and convenience.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Feature Cards with Icons */}
-      <section className="py-12 px-4 max-w-6xl mx-auto">
+      <section className="py-12 px-4 max-w-6xl mx-auto" data-aos="fade-up">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card icon={<FaMapMarkerAlt className="text-green-600 text-3xl" />} title="Location" desc="Kadri Hills, Mangaluru, Karnataka 575008" />
           <Card icon={<FaClock className="text-green-600 text-3xl" />} title="Open Hours" desc="Mon–Sun, 7:30 AM to 9:30 PM" />
@@ -50,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-6 text-center">
+      <section className="py-16 px-6 text-center" data-aos="zoom-in">
         <p className="text-lg max-w-3xl mx-auto mb-8 text-gray-800">
           We offer a wide range of daily essentials, from snacks and cool drinks to stationery and sweets — all under one friendly roof.
         </p>
@@ -62,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Feature Section */}
-      <section className="text-gray-700 py-20 bg-white/70">
+      <section className="text-gray-700 py-20 bg-white/70" data-aos="fade-up">
         <div className="container px-5 mx-auto">
           <div className="flex flex-wrap -m-4 justify-center">
             {features.map((item, index) => (
@@ -79,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-green-100/70 py-10">
+      <section className="bg-green-100/70 py-10" data-aos="fade-up">
         <div className="flex justify-around max-w-4xl mx-auto text-center">
           {stats.map((stat, idx) => (
             <div key={idx}>
@@ -91,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <div className="text-center py-12">
+      <div className="text-center py-12" data-aos="zoom-in">
         <h2 className="text-2xl font-bold text-green-800 mb-4">Come Visit Lakshman Stall Today!</h2>
         <a
           href="https://www.google.com/maps/place/Kadri+Hills,+Mangaluru,+Karnataka+575008"

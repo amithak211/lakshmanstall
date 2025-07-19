@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaHandsHelping, FaSmile, FaTree, FaBook } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+
   return (
-    <div className="bg-gradient-to-br from-green-50 to-yellow-100 min-h-screen p-6 text-gray-800">
+    <div className="bg-gradient-to-br from-green-50 to-yellow-100 min-h-screen p-6 text-gray-800 font-sans">
       {/* Hero Section */}
-      <section className="text-center py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-900 mb-4 animate-fade-in-down">
+      <section className="text-center py-12" data-aos="fade-down">
+        <h1 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
           Meet Laxman
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-700">
@@ -15,19 +21,18 @@ export default function About() {
       </section>
 
       {/* Image Section */}
-      <section className="flex justify-center gap-6 mb-10">
-  <img
-    src="img/IMG-20250717-WA0003[1].jpg"
-    alt="Laxman"
-    className="rounded-lg shadow-lg w-72 sm:w-80 object-cover"
-  />
-  <img
-    src="img/IMG-20250717-WA0003[2].jpg"
-    alt="Laxman"
-    className="rounded-lg shadow-lg w-72 sm:w-80 object-cover"
-  />
-</section>
-
+      <section className="flex justify-center gap-6 mb-10" data-aos="zoom-in">
+        <img
+          src="img/IMG-20250717-WA0003[1].jpg"
+          alt="Laxman"
+          className="rounded-lg shadow-xl w-72 sm:w-80 object-cover hover:scale-105 transition duration-500"
+        />
+        <img
+          src="img/IMG-20250717-WA0003[2].jpg"
+          alt="Laxman"
+          className="rounded-lg shadow-xl w-72 sm:w-80 object-cover hover:scale-105 transition duration-500"
+        />
+      </section>
 
       {/* Life and Values */}
       <section className="grid md:grid-cols-3 gap-8 py-12 max-w-6xl mx-auto">
@@ -35,21 +40,27 @@ export default function About() {
           icon={<FaHandsHelping className="text-green-600 text-3xl" />}
           title="Always Helping"
           desc="Laxman is known for going the extra mile to help his customers and neighbors without expecting anything in return."
+          aos="fade-right"
         />
         <FeatureCard
           icon={<FaSmile className="text-yellow-500 text-3xl" />}
           title="Friendly Nature"
           desc="He greets every visitor with a warm smile, making everyone feel like family."
+          aos="fade-up"
         />
         <FeatureCard
           icon={<FaTree className="text-green-700 text-3xl" />}
           title="Simple Living"
           desc="Laxman lives a humble life and believes in honesty, sustainability, and local values."
+          aos="fade-left"
         />
       </section>
 
       {/* History Section */}
-      <section className="bg-white bg-opacity-90 rounded-2xl p-10 my-10 max-w-5xl mx-auto shadow-md">
+      <section
+        className="bg-white bg-opacity-90 rounded-2xl p-10 my-10 max-w-5xl mx-auto shadow-md"
+        data-aos="fade-up"
+      >
         <div className="flex items-center justify-center mb-6">
           <FaBook className="text-green-700 text-3xl mr-2" />
           <h2 className="text-2xl font-bold text-green-900">His Journey</h2>
@@ -60,7 +71,10 @@ export default function About() {
       </section>
 
       {/* Personal Quote */}
-      <section className="bg-white bg-opacity-80 py-12 rounded-2xl shadow-xl mx-4 md:mx-16 my-10 text-center">
+      <section
+        className="bg-white bg-opacity-80 py-12 rounded-2xl shadow-xl mx-4 md:mx-16 my-10 text-center"
+        data-aos="zoom-in"
+      >
         <p className="text-2xl md:text-3xl font-semibold italic text-green-800 max-w-3xl mx-auto">
           “Work hard. Be kind. And never forget your roots.” — Laxman
         </p>
@@ -70,9 +84,12 @@ export default function About() {
 }
 
 // Feature Card Component
-function FeatureCard({ icon, title, desc }) {
+function FeatureCard({ icon, title, desc, aos }) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition duration-300 ease-in-out">
+    <div
+      className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition duration-300 ease-in-out"
+      data-aos={aos}
+    >
       <div className="flex justify-center mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-2 text-green-800">{title}</h3>
       <p className="text-gray-600">{desc}</p>
