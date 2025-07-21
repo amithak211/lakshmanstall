@@ -63,11 +63,13 @@ export default function Contact() {
               className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             ></textarea>
             <button
-              type="submit"
-              className="bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300"
-            >
-              Send Message
-            </button>
+  type="submit"
+  className="relative inline-block px-6 py-3 font-semibold text-white transition duration-300 bg-green-700 rounded-md shadow-md hover:scale-105 hover:shadow-green-400 hover:bg-green-600 focus:outline-none"
+>
+  <span className="absolute inset-0 rounded-md bg-green-500 blur opacity-75 animate-pulse"></span>
+  <span className="relative z-10">Send Message</span>
+</button>
+
           </form>
         </div>
       </div>

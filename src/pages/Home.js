@@ -30,17 +30,25 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-cover bg-fixed bg-center" style={{ backgroundImage: 'url("/background-store.png")' }}>
+      
+      {/* Hero Section with Background Video */}
+      <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden" data-aos="fade-up">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+        >
+          <source src="/prod/AdobeStock_1542349207_Video_4K_Preview.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-      {/* Hero Section */}
-      <section
-        className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1607082352314-722e4c45b2b1?auto=format&fit=crop&w=1740&q=80')",
-        }}
-        data-aos="fade-up"
-      >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        {/* Optional Overlay */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
 
+        {/* Hero Content */}
         <motion.div
           className="relative z-10 bg-white/80 p-10 rounded-2xl shadow-2xl max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -72,21 +80,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Store Image Section */}
       <section className="py-16 px-6 text-center" data-aos="zoom-in">
-  <p className="text-lg max-w-3xl mx-auto mb-8 text-gray-800 dark:text-black-200">
-    We offer a wide range of daily essentials, from snacks and cool drinks to stationery and sweets — all under one friendly roof.
-  </p>
-
-  <div>
-    <h3 className="text-2xl font-semibold text-green-800 mb-4">Lakshman Stall Front View</h3>
-    <img
-      src="WhatsApp Image 2025-07-17 at 14.31.13_570daf18.jpg"
-      alt="Lakshman Stall Front"
-      className="rounded-xl shadow-lg mx-auto w-full max-w-xl"
-    />
-  </div>
-</section>
-
+        <p className="text-lg max-w-3xl mx-auto mb-8 text-gray-800 dark:text-black-200">
+          We offer a wide range of daily essentials, from snacks and cool drinks to stationery and sweets — all under one friendly roof.
+        </p>
+        <div>
+          <h3 className="text-2xl font-semibold text-green-800 mb-4">Lakshman Stall Front View</h3>
+          <img
+            src="WhatsApp Image 2025-07-17 at 14.31.13_570daf18.jpg"
+            alt="Lakshman Stall Front"
+            className="rounded-xl shadow-lg mx-auto w-full max-w-xl"
+          />
+        </div>
+      </section>
 
       {/* Feature Section */}
       <section className="text-gray-700 py-20 bg-white/70" data-aos="fade-up">

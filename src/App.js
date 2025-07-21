@@ -49,7 +49,7 @@ const styles = {
     width: '100%',
   },
   overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // White overlay with transparency
+    backgroundColor: 'rgba(255, 255, 255, 0.45)', // White overlay with transparency
     minHeight: '100vh',
     width: '100%',
   },
