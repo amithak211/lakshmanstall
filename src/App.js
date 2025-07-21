@@ -10,7 +10,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
-import Feedback from './pages/Feedback';
+
+import Testimonials from './pages/Testimonials';
 
 function App() {
   useEffect(() => {
@@ -27,7 +28,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/feedback" element={<Feedback />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            
           </Routes>
           <Footer />
         </Router>

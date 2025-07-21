@@ -72,17 +72,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="py-16 px-6 text-center" data-aos="zoom-in">
-        <p className="text-lg max-w-3xl mx-auto mb-8 text-gray-800">
-          We offer a wide range of daily essentials, from snacks and cool drinks to stationery and sweets — all under one friendly roof.
-        </p>
-        <img
-          src="WhatsApp Image 2025-07-17 at 14.31.13_570daf18.jpg"
-          alt="Lakshman Stall Front"
-          className="rounded-xl shadow-lg mx-auto w-full max-w-xl"
-        />
-      </section>
+  <p className="text-lg max-w-3xl mx-auto mb-8 text-gray-800 dark:text-black-200">
+    We offer a wide range of daily essentials, from snacks and cool drinks to stationery and sweets — all under one friendly roof.
+  </p>
+
+  <div>
+    <h3 className="text-2xl font-semibold text-green-800 mb-4">Lakshman Stall Front View</h3>
+    <img
+      src="WhatsApp Image 2025-07-17 at 14.31.13_570daf18.jpg"
+      alt="Lakshman Stall Front"
+      className="rounded-xl shadow-lg mx-auto w-full max-w-xl"
+    />
+  </div>
+</section>
+
 
       {/* Feature Section */}
       <section className="text-gray-700 py-20 bg-white/70" data-aos="fade-up">

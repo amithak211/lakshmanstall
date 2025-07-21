@@ -9,7 +9,10 @@ export default function About() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-green-50 to-yellow-100 min-h-screen p-6 text-gray-800 font-sans">
+    <div className="relative min-h-screen font-sans">
+  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-yellow-100 opacity-70 -z-10"></div>
+
+  <div className="p-6 text-gray-800 relative z-10">
       {/* Hero Section */}
       <section className="text-center py-12" data-aos="fade-down">
         <h1 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
@@ -20,19 +23,32 @@ export default function About() {
         </p>
       </section>
 
-      {/* Image Section */}
-      <section className="flex justify-center gap-6 mb-10" data-aos="zoom-in">
-        <img
-          src="img/IMG-20250717-WA0003[1].jpg"
-          alt="Laxman"
-          className="rounded-lg shadow-xl w-72 sm:w-80 object-cover hover:scale-105 transition duration-500"
-        />
-        <img
-          src="img/IMG-20250717-WA0003[2].jpg"
-          alt="Laxman"
-          className="rounded-lg shadow-xl w-72 sm:w-80 object-cover hover:scale-105 transition duration-500"
-        />
-      </section>
+     {/* Image Section */}
+<section className="flex justify-center gap-6 mb-10" data-aos="zoom-in">
+  <div className="text-center">
+    <img
+      src="img/IMG-20250717-WA0003[1].jpg"
+      alt="Laxman at Stall"
+      className="rounded-lg shadow-xl w-72 h-80 sm:w-80 sm:h-80 object-cover hover:scale-105 transition duration-500"
+    />
+    <p className="mt-2 text-sm font-medium text-gray-600 dark:text-green-600">
+      The owner:Lakshman
+    </p>
+  </div>
+
+  <div className="text-center">
+    <img
+      src="img/IMG-20250717-WA0003[2].jpg"
+      alt="Laxman in Store"
+      className="rounded-lg shadow-xl w-72 h-80 sm:w-80 sm:h-80 object-cover hover:scale-105 transition duration-500"
+    />
+    <p className="mt-2 text-sm font-medium text-gray-700 dark:text-green-600">
+      Side View of Stall
+    </p>
+  </div>
+</section>
+
+
 
       {/* Life and Values */}
       <section className="grid md:grid-cols-3 gap-8 py-12 max-w-6xl mx-auto">
@@ -79,6 +95,7 @@ export default function About() {
           “Work hard. Be kind. And never forget your roots.” — Laxman
         </p>
       </section>
+    </div>
     </div>
   );
 }

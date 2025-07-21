@@ -1,0 +1,11 @@
+@keyframes bgShift {
+  0%   { background-color: #256D1B; }
+  25%  { background-color: #2e7c23; }
+  50%  { background-color: #348b28; }
+  75%  { background-color: #2e7c23; }
+  100% { background-color: #256D1B; }
+}
+
+.animated-header {
+  animation: bgShift 10s ease-in-out infinite;
+}
